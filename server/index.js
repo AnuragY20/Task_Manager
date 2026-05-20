@@ -11,7 +11,16 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://task-manager-xi-flame.vercel.app/"
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Routes
