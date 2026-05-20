@@ -14,11 +14,8 @@ const app = express();
 // app.use(cors());
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://task-manager-xi-flame.vercel.app/"
-    ],
-    credentials: true,
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 app.use(express.json());
